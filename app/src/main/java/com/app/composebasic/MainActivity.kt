@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            GreetingButton()
+            GreetingText("Hello")
         }
     }
 }
@@ -28,6 +28,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposeBasicTheme {
-        GreetingButton()
+        GreetingText("Hello")
     }
 }
