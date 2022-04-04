@@ -43,25 +43,27 @@ fun MainScreen() {
         color = Color.DarkGray,
         modifier = Modifier.fillMaxSize()
     ) {
-        Row {
-            Surface(
-                color = Color.Magenta,
-                modifier = Modifier
-                    .height(600.dp)
-                    .width(60.dp)
-            ) { }
-            Surface(
-                color = Color.Cyan,
-                modifier = Modifier
-                    .height(600.dp)
-                    .width(60.dp)
-            )
-            { }
+        Row(
+            modifier = Modifier.fillMaxSize(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.Bottom
+        ) {
+            HorizontalColoredBar(color = Color.Magenta)
+            HorizontalColoredBar(color = Color.Gray)
+            HorizontalColoredBar(color = Color.Blue)
         }
-
     }
 }
 
+@Composable
+fun HorizontalColoredBar(color: Color) {
+    Surface(
+        color = color,
+        modifier = Modifier
+            .height(600.dp)
+            .width(60.dp)
+    ) { }
+}
 
 @Composable
 fun GreetingButton() {
