@@ -44,9 +44,17 @@ fun MainScreen() {
         modifier = Modifier.fillMaxSize()
     ) {
         Row(
+            // SpaceAround
+            // 각 막대의 왼쪽과 오른쪽에 공간을 추가
+            // SpaceBetween
+            // 막대 사이에만 공간을 추가. 막대 끝에는 공간 추가 X
+            // SpaceEvenly
+            // 막대 사이에 공간을 균일하게 추가. n/1임.
+
+
             modifier = Modifier.fillMaxSize(),
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.Bottom
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
         ) {
             HorizontalColoredBar(color = Color.Magenta)
             HorizontalColoredBar(color = Color.Gray)
