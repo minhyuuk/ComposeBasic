@@ -13,11 +13,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            GreetingText("Hello")
+            MainScreen()
         }
     }
 }
-
 
 // Amulator를 실행하기 전에 Split 또는 Design을 통해
 // 미리 실행화면을 볼 수 있는 함수이다.
@@ -28,6 +27,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposeBasicTheme {
-        GreetingText("Hello")
+        MainScreen()
     }
 }
