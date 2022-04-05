@@ -38,7 +38,7 @@ fun GreetingText(name: String) {
 }
 
 @Composable
-fun MainScreen() {
+fun RowScreen() {
     Surface(
         color = Color.DarkGray,
         modifier = Modifier.fillMaxSize()
@@ -56,20 +56,47 @@ fun MainScreen() {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            HorizontalColoredBar(color = Color.Magenta)
-            HorizontalColoredBar(color = Color.Gray)
-            HorizontalColoredBar(color = Color.Blue)
+            ColoredSquareBar(color = Color.Magenta)
+            ColoredSquareBar(color = Color.Gray)
+            ColoredSquareBar(color = Color.Blue)
         }
     }
 }
 
 @Composable
-fun HorizontalColoredBar(color: Color) {
+fun ColumnScreen() {
+    Surface(
+        color = Color.DarkGray,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.SpaceEvenly,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                ColoredSquareBar(color = Color.Green)
+                ColoredSquareBar(color = Color.Yellow)
+            }
+            ColoredSquareBar(color = Color.Magenta)
+            ColoredSquareBar(color = Color.Gray)
+            ColoredSquareBar(color = Color.Blue)
+            ColoredSquareBar(color = Color.Red)
+
+        }
+    }
+}
+
+@Composable
+fun ColoredSquareBar(color: Color) {
     Surface(
         color = color,
         modifier = Modifier
-            .height(600.dp)
-            .width(60.dp)
+            .height(100.dp)
+            .width(100.dp)
     ) { }
 }
 
