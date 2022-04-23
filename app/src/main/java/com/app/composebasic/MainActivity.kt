@@ -7,12 +7,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.app.composebasic.ui.theme.ComposeBasicTheme
 
+// 동적 텍스트 예시를 위한 nameList
+val nameList : List<String> = listOf("John","Michael","Andrew","Danna")
+
 class MainActivity : ComponentActivity() {
     // ComposeBasic은 프로젝트 명이며 프로젝트 명 + Theme이라는 이름으로 생성된다.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ColumnScreen()
+            DynamicGreattingList(names = nameList)
         }
     }
 }
@@ -26,6 +29,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposeBasicTheme {
-        ColumnScreen()
+        DynamicGreattingList(names = nameList)
     }
 }

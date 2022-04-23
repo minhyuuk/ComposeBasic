@@ -106,3 +106,23 @@ fun GreetingButton() {
         GreetingText(name = "button")
     }
 }
+
+// 여기는 동적 텍스트 예시를 위한 함수이다.
+// 텍스트를 출력한다.
+@Composable
+fun DynamicHelloText(name : String){
+    Text(
+        text = "Hello $name!"
+    )
+}
+
+
+// nameList의 value만큼 텍스트를 출력한다.
+@Composable
+fun DynamicGreattingList(names: List<String>){
+    Column {
+        for(name in names){
+            DynamicHelloText(name = name)
+        }
+    }
+}
