@@ -13,10 +13,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
+// 동적 텍스트 예시를 위한 nameList
+val nameList: ArrayList<String> = arrayListOf("John", "Michael", "Andrew", "Danna")
+
 // Compose는 Composable을 기반으로 합니다.
 // Composable은 아무데나 저장이 가능합니다.
 // 동일한 패키지 내에만 있으면 아무 곳에서 작동합니다.
 // Modifier는 속성 제공함
+
 @Composable
 fun GreetingText(name: String) {
     Surface(color = MaterialTheme.colors.secondaryVariant) {
@@ -110,7 +114,7 @@ fun GreetingButton() {
 // 여기는 동적 텍스트 예시를 위한 함수이다.
 // 텍스트를 출력한다.
 @Composable
-fun DynamicHelloText(name : String){
+fun DynamicHelloText(name: String) {
     Text(
         text = "Hello $name!"
     )
@@ -119,10 +123,17 @@ fun DynamicHelloText(name : String){
 
 // nameList의 value만큼 텍스트를 출력한다.
 @Composable
-fun DynamicGreattingList(names: List<String>){
-    Column {
-        for(name in names){
+fun DynamicGreattingList(names: List<String>) {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.SpaceEvenly,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        for (name in names) {
             DynamicHelloText(name = name)
+        }
+        Button(onClick = { nameList.add("New name") }) {
+            Text(text = "Add new name")
         }
     }
 }
